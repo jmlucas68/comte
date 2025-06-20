@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auguste Comte - Vida, Obra y Pensamiento</title>
+    <style>
+        :root {
+            --color-primary: #2c3e50;
+            --color-secondary: #3498db;
+            --color-light: #ecf0f1;
+            --color-dark: #1a1a1a;
+            --color-accent: #e74c3c;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-light);
+            color: var(--color-dark);
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+            header h1, header p {
+                margin: 0.5rem 0;
+            }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        section {
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--color-secondary);
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .quote {
+            font-style: italic;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-left: 4px solid var(--color-accent);
+            color: var(--color-dark);
+        }
+
+        .link-box {
+            background: #f0f8ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+            .link-box a {
+                color: var(--color-secondary);
+                text-decoration: none;
+            }
+
+                .link-box a:hover {
+                    text-decoration: underline;
+                }
+
+        .obra {
+            border-left: 3px solid var(--color-accent);
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+            .obra h4 {
+                margin-bottom: 0.5rem;
+            }
+
+            .obra p {
+                margin-top: 0;
+            }
+
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Auguste Comte</h1>
+        <p id="subtitulo">Vida, Obra y Pensamiento</p>
+    </header>
+    <div class="container">
+        <div id="loading" class="loading">Cargando información...</div>
+        <div id="contenido" style="display: none;">
+            <section id="vida"></section>
+            <section id="pensamiento"></section>
+            <section id="influencias"></section>
+            <section id="obras"></section>
+            <section id="citas"></section>
+            <section id="referencias"></section>
+        </div>
+    </div>
+    <footer>
+        <p id="copyright">&copy; 2025 - Vida, obra y pensamiento de Auguste Comte</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('comte.json');
+                if (!response.ok) throw new Error('Error al cargar los datos');
+                const data = await response.json();
+
+                // Mostrar el contenido y ocultar el loading
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('contenido').style.display = 'block';
+
+                // Actualizar el título y subtítulo
+                document.getElementById('titulo').textContent = data.nombre;
+                document.getElementById('subtitulo').textContent = data.vida.nacionalidad + ', ' + data.vida.fechas;
+
+                // Renderizar la sección de vida
+                const vida = document.getElementById('vida');
+                vida.innerHTML = `
+                    <h2>Vida</h2>
+                    <p><strong>Fechas:</strong> ${data.vida.fechas}</p>
+                    <p><strong>Nacionalidad:</strong> ${data.vida.nacionalidad}</p>
+                    <p><strong>Cargos:</strong></p>
+                    <ul>
+                        ${data.vida.cargos.map(cargo => `<li>${cargo}</li>`).join('')}
+                    </ul>
+                    <p><strong>Contexto histórico:</strong> ${data.vida.contexto_historico}</p>
+                    <p><strong>Contexto filosófico:</strong> ${data.vida.contexto_filosofico}</p>
+                `;
+
+                // Renderizar la sección de pensamiento
+                const pensamiento = document.getElementById('pensamiento');
+                pensamiento.innerHTML = `
+                    <h2>Pensamiento</h2>
+                    <h3>Método científico</h3>
+                    <p>${data.pensamiento.metodo_cientifico.descripcion}</p>
+                    <div class="quote">
+                        ${data.pensamiento.metodo_cientifico.citas.map(cita => `<p>${cita}</p>`).join('')}
+                    </div>
+                    <h3>Visión de la historia</h3>
+                    <p>${data.pensamiento.vision_historia.descripcion}</p>
+                    <div class="quote">
+                        ${data.pensamiento.vision_historia.citas.map(cita => `<p>${cita}</p>`).join('')}
+                    </div>
+                    <h3>Utopismo</h3>
+                    <p>${data.pensamiento.utopismo.descripcion}</p>
+                    <div class="quote">
+                        ${data.pensamiento.utopismo.citas.map(cita => `<p>${cita}</p>`).join('')}
+                    </div>
+                `;
+
+                // Renderizar la sección de influencias
+                const influencias = document.getElementById('influencias');
+                influencias.innerHTML = `
+                    <h2>Influencias</h2>
+                    <h3>Influencias recibidas</h3>
+                    <ul>
+                        ${data.influencias_recibidas.map(inf => `<li>${inf}</li>`).join('')}
+                    </ul>
+                    <h3>Influencias ejercidas</h3>
+                    <ul>
+                        ${data.influencias_ejercidas.map(inf => `<li>${inf}</li>`).join('')}
+                    </ul>
+                `;
+
+                // Renderizar la sección de obras
+                const obras = document.getElementById('obras');
+                obras.innerHTML = `
+                    <h2>Principales Obras</h2>
+                    ${data.principales_obras.map(obra => `
+                        <div class="obra">
+                            <h4>${obra.titulo} (${obra.anio})</h4>
+                            <p>${obra.descripcion}</p>
+                            <p>
+                                ${obra.enlace_ebook && obra.enlace_ebook !== "No disponible libremente en español" ? `<a href="${obra.enlace_ebook}" target="_blank">Leer online</a> | ` : ''}
+                                ${obra.enlace_tienda ? `<a href="${obra.enlace_tienda}" target="_blank">Comprar en Amazon</a>` : ''}
+                            </p>
+                        </div>
+                    `).join('')}
+                `;
+
+                // Renderizar la sección de citas
+                const citas = document.getElementById('citas');
+                citas.innerHTML = `
+                    <h2>Citas destacadas</h2>
+                    <ul>
+                        ${data.citas_destacadas.map(cita => `<li>${cita}</li>`).join('')}
+                    </ul>
+                `;
+
+                // Renderizar la sección de referencias
+                const referencias = document.getElementById('referencias');
+                referencias.innerHTML = `
+                    <h2>Referencias y Enlaces</h2>
+                    <div class="link-box">
+                        <ul>
+                            <li><a href="${data.referencias.wikipedia}" target="_blank">Wikipedia (español)</a></li>
+                            <li><a href="${data.referencias.worldhistory}" target="_blank">World History Encyclopedia (español)</a></li>
+                            <li><a href="${data.referencias.frases}" target="_blank">Frases célebres</a></li>
+                            <li><a href="${data.referencias.psicologiaymente}" target="_blank">Psicología y Mente (frases)</a></li>
+                            <li><a href="${data.referencias.articulo_academico}" target="_blank">Artículo académico (PDF)</a></li>
+                            <li><a href="${data.referencias.archive_org}" target="_blank">Novum Organum (Archive.org, español)</a></li>
+                        </ul>
+                    </div>
+                `;
+            } catch (error) {
+                document.getElementById('loading').textContent = 'Error al cargar los datos: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+{
+  "nombre": "Auguste Comte",
+  "vida": {
+    "fechas": "1798-1857",
+    "nacionalidad": "Francés",
+    "cargos": [
+      "Filósofo",
+      "Sociólogo",
+      "Fundador del Positivismo"
+    ],
+    "contexto_historico": "Francia post-revolucionaria, durante la Restauración, la Revolución de 1830 y el Segundo Imperio. Auge de la industrialización y de los conflictos sociales.",
+    "contexto_filosofico": "Reacción contra la metafísica de la Ilustración y el desorden social de la Revolución Francesa. Influenciado por el socialismo utópico de Saint-Simon."
+  },
+  "pensamiento": {
+    "metodo_cientifico": {
+      "descripcion": "Comte es el padre del Positivismo, una filosofía que sostiene que el único conocimiento auténtico es el conocimiento científico ('positivo'), derivado de la observación y la lógica. Propuso la Sociología como la ciencia suprema para estudiar y organizar la sociedad.",
+      "citas": [
+        "Saber para prever, prever para proveer.",
+        "El amor por principio, el orden por base, el progreso por fin."
+      ],
+      "influencias": {
+        "recibidas": "Henri de Saint-Simon, la Ilustración (Condorcet, Montesquieu), el empirismo de David Hume y la tradición contrarrevolucionaria.",
+        "ejercidas": "Émile Durkheim, John Stuart Mill, el positivismo lógico del Círculo de Viena, y el desarrollo de la sociología como disciplina. El lema de Brasil 'Ordem e Progresso' está inspirado en su filosofía."
+      }
+    },
+    "vision_historia": {
+      "descripcion": "Propuso la 'Ley de los tres estadios' para explicar la evolución del pensamiento humano y de la sociedad: el estadio teológico (explicaciones sobrenaturales), el metafísico (explicaciones abstractas) y el positivo (explicaciones científicas).",
+      "citas": [
+        "El progreso no es más que el desarrollo del orden."
+      ]
+    },
+    "utopismo": {
+      "descripcion": "En su última etapa, desarrolló la 'Religión de la Humanidad', un sistema de culto secular para reemplazar a las religiones tradicionales, donde la Humanidad misma es el objeto de adoración y los científicos y sociólogos son los nuevos sacerdotes.",
+      "citas": [
+        "Todo es relativo, he ahí el único principio absoluto."
+      ]
+    }
+  },
+  "principales_obras": [
+    {
+      "titulo": "Curso de filosofía positiva (Cours de philosophie positive)",
+      "anio": "1830-1842",
+      "descripcion": "Su obra magna en seis volúmenes, donde expone la Ley de los tres estadios y funda las bases de la sociología.",
+      "enlace_ebook": "https://gallica.bnf.fr/ark:/12148/bpt6k58607d.texteImage",
+      "enlace_tienda": "https://www.amazon.com/-/es/Auguste-Comte/dp/847522022X"
+    },
+    {
+      "titulo": "Discurso sobre el espíritu positivo (Discours sur l'esprit positif)",
+      "anio": "1844",
+      "descripcion": "Un resumen conciso y accesible de su filosofía positivista, sirviendo como introducción a su pensamiento.",
+      "enlace_ebook": "https://archive.org/details/discursosobreel00comtgoog",
+      "enlace_tienda": "https://www.amazon.com/-/es/Auguste-Comte/dp/8420679634"
+    },
+    {
+      "titulo": "Sistema de política positiva (Système de politique positive)",
+      "anio": "1851-1854",
+      "descripcion": "Obra de su segunda etapa donde expone la sociología como base para una nueva organización política y social, introduciendo la 'Religión de la Humanidad'.",
+      "enlace_ebook": "https://gallica.bnf.fr/ark:/12148/bpt6k205220z.texteImage",
+      "enlace_tienda": "https://www.amazon.com/-/es/Auguste-Comte/dp/B08P3Y8B91"
+    },
+    {
+      "titulo": "Catecismo positivista (Catéchisme positiviste)",
+      "anio": "1852",
+      "descripcion": "Presenta su 'Religión de la Humanidad' en forma de un diálogo catequético para su difusión popular.",
+      "enlace_ebook": "https://archive.org/details/catecismopositiv00comt",
+      "enlace_tienda": "https://www.amazon.com/-/es/Auguste-Comte/dp/9684322485"
+    }
+  ],
+  "influencias_recibidas": [
+    "Henri de Saint-Simon",
+    "Marqués de Condorcet",
+    "Joseph de Maistre",
+    "David Hume"
+  ],
+  "influencias_ejercidas": [
+    "Émile Durkheim",
+    "John Stuart Mill",
+    "Positivismo lógico (Círculo de Viena)",
+    "Fundación de la Sociología"
+  ],
+  "citas_destacadas": [
+    "Saber para prever, prever para proveer.",
+    "El amor por principio, el orden por base, el progreso por fin.",
+    "Sólo los buenos sentimientos pueden unirnos, el interés jamás ha forjado uniones duraderas.",
+    "Mucho más que el interés, es el orgullo lo que nos divide.",
+    "Las almas muertas gobiernan a las vivas."
+  ],
+  "referencias": {
+    "wikipedia": "https://es.wikipedia.org/wiki/Auguste_Comte",
+    "worldhistory": "https://www.worldhistory.org/trans/es/1-20516/auguste-comte/",
+    "frases": "https://proverbia.net/autor/frases-de-auguste-comte",
+    "psicologiaymente": "https://psicologiaymente.com/reflexiones/frases-auguste-comte",
+    "articulo_academico": "http://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-14352012000200007",
+    "archive_org": "https://archive.org/search?query=creator%3A%22Comte%2C+Auguste%2C+1798-1857%22"
+  }
+}
